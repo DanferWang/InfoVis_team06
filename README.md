@@ -1,2 +1,2 @@
-# Infomation_Visualization
+# Infomation Visualization
 This repository is for the assignment of Information Visualization, UvA.
