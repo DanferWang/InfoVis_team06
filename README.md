@@ -3,9 +3,6 @@ Information Visualization team 06 project progress.
 
 ## Week 2 (11/2/21)
 
-###Brief introductions
-
-
 **Three primitive ideas**
 
 - OmniArt: combine multiple pictures together to create a new picture.
@@ -25,7 +22,7 @@ Information Visualization team 06 project progress.
 
 ## Week 3 (18/2/21)
 
-###Present and elaborate two ideas we chose last week
+**Present and elaborate two ideas we chose last week**
 
 **Two elaborate ideas**
 
