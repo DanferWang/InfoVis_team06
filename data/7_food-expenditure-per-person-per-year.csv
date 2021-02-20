@@ -1,0 +1,173 @@
+Entity,Code,Year,Food expenditure (USDA (2017))
+Algeria,DZA,2015,724
+Algeria,DZA,2016,639
+Argentina,ARG,2015,1737
+Argentina,ARG,2016,2306
+Australia,AUS,2015,2915
+Australia,AUS,2016,2927
+Austria,AUT,2015,2322
+Austria,AUT,2016,2273
+Azerbaijan,AZE,2015,1210
+Azerbaijan,AZE,2016,896
+Bahrain,BHR,2015,1477
+Bahrain,BHR,2016,1347
+Belarus,BLR,2015,1050
+Belarus,BLR,2016,962
+Belgium,BEL,2015,2532
+Belgium,BEL,2016,2706
+Bolivia,BOL,2015,606
+Bolivia,BOL,2016,656
+Bosnia and Herzegovina,BIH,2015,1063
+Bosnia and Herzegovina,BIH,2016,1221
+Brazil,BRA,2015,815
+Brazil,BRA,2016,833
+Bulgaria,BGR,2015,813
+Bulgaria,BGR,2016,876
+Cameroon,CMR,2015,426
+Cameroon,CMR,2016,449
+Canada,CAN,2015,2168
+Canada,CAN,2016,2168
+Chile,CHL,2015,1293
+Chile,CHL,2016,1402
+China,CHN,2015,750
+China,CHN,2016,706
+Colombia,COL,2015,650
+Colombia,COL,2016,646
+Costa Rica,CRI,2015,1504
+Costa Rica,CRI,2016,2098
+Croatia,HRV,2015,2421
+Croatia,HRV,2016,2164
+Czechia,CZE,2015,1340
+Czechia,CZE,2016,1510
+Denmark,DNK,2015,2719
+Denmark,DNK,2016,2821
+Dominican Republic,DOM,2015,1173
+Dominican Republic,DOM,2016,1389
+Ecuador,ECU,2015,869
+Ecuador,ECU,2016,843
+Egypt,EGY,2015,1075
+Egypt,EGY,2016,921
+Estonia,EST,2015,1917
+Estonia,EST,2016,1952
+Finland,FIN,2015,2848
+Finland,FIN,2016,2757
+France,FRA,2015,2647
+France,FRA,2016,2727
+Georgia,GEO,2015,841
+Georgia,GEO,2016,817
+Germany,DEU,2015,2179
+Germany,DEU,2016,2246
+Greece,GRC,2015,2244
+Greece,GRC,2016,2245
+Guatemala,GTM,2015,1370
+Guatemala,GTM,2016,1450
+Hong Kong,HKG,2015,4263
+Hong Kong,HKG,2016,4423
+Hungary,HUN,2015,1152
+Hungary,HUN,2016,1196
+India,IND,2015,315
+India,IND,2016,311
+Indonesia,IDN,2015,629
+Indonesia,IDN,2016,638
+Iran,IRN,2015,541
+Iran,IRN,2016,598
+Ireland,IRL,2015,1945
+Ireland,IRL,2016,1973
+Israel,ISR,2015,2882
+Israel,ISR,2016,3320
+Italy,ITA,2015,2646
+Italy,ITA,2016,2664
+Japan,JPN,2015,2631
+Japan,JPN,2016,3020
+Jordan,JOR,2015,1899
+Jordan,JOR,2016,1080
+Kazakhstan,KAZ,2015,2329
+Kazakhstan,KAZ,2016,1744
+Kenya,KEN,2015,543
+Kenya,KEN,2016,634
+Kuwait,KWT,2015,1538
+Kuwait,KWT,2016,1604
+Latvia,LVA,2015,1663
+Latvia,LVA,2016,1617
+Lithuania,LTU,2015,2090
+Lithuania,LTU,2016,2215
+Malaysia,MYS,2015,1122
+Malaysia,MYS,2016,1118
+Mexico,MEX,2015,1421
+Mexico,MEX,2016,1331
+Montenegro,MNE,2015,1171
+Montenegro,MNE,2016,1173
+Morocco,MAR,2015,719
+Morocco,MAR,2016,709
+Netherlands,NLD,2015,2255
+Netherlands,NLD,2016,2341
+New Zealand,NZL,2015,3188
+New Zealand,NZL,2016,3149
+Nigeria,NGA,2015,1132
+Nigeria,NGA,2016,1028
+North Macedonia,MKD,2015,1064
+North Macedonia,MKD,2016,1108
+Norway,NOR,2015,3538
+Norway,NOR,2016,3524
+Pakistan,PAK,2015,458
+Pakistan,PAK,2016,490
+Peru,PER,2015,1432
+Peru,PER,2016,1068
+Philippines,PHL,2015,894
+Philippines,PHL,2016,925
+Poland,POL,2015,1188
+Poland,POL,2016,1181
+Portugal,PRT,2015,2251
+Portugal,PRT,2016,2311
+Qatar,QAT,2015,1516
+Qatar,QAT,2016,1570
+Romania,ROU,2015,1486
+Romania,ROU,2016,1712
+Russia,RUS,2015,1319
+Russia,RUS,2016,1305
+Saudi Arabia,SAU,2015,1954
+Saudi Arabia,SAU,2016,1664
+Serbia,SRB,2015,932
+Serbia,SRB,2016,934
+Singapore,SGP,2015,1336
+Singapore,SGP,2016,1297
+Slovakia,SVK,2015,1545
+Slovakia,SVK,2016,1581
+Slovenia,SVN,2015,1675
+Slovenia,SVN,2016,1821
+South Africa,ZAF,2015,673
+South Africa,ZAF,2016,612
+South Korea,KOR,2015,1640
+South Korea,KOR,2016,1683
+Spain,ESP,2015,2002
+Spain,ESP,2016,2138
+Sweden,SWE,2015,2784
+Sweden,SWE,2016,2820
+Switzerland,CHE,2015,3763
+Switzerland,CHE,2016,3631
+Taiwan,TWN,2015,1639
+Taiwan,TWN,2016,1685
+Thailand,THA,2015,862
+Thailand,THA,2016,884
+Tunisia,TUN,2015,643
+Tunisia,TUN,2016,618
+Turkey,TUR,2015,1440
+Turkey,TUR,2016,1471
+Turkmenistan,TKM,2015,1414
+Turkmenistan,TKM,2016,1637
+Ukraine,UKR,2015,513
+Ukraine,UKR,2016,539
+United Arab Emirates,ARE,2015,3159
+United Arab Emirates,ARE,2016,2950
+United Kingdom,GBR,2015,2217
+United Kingdom,GBR,2016,1991
+United States,USA,2015,2392
+United States,USA,2016,2408
+Uruguay,URY,2015,2033
+Uruguay,URY,2016,1990
+Uzbekistan,UZB,2015,380
+Uzbekistan,UZB,2016,369
+Venezuela,VEN,2015,165
+Venezuela,VEN,2016,258
+Vietnam,VNM,2015,460
+Vietnam,VNM,2016,612
