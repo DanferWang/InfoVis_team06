@@ -45,3 +45,25 @@ Information Visualization team 06 project progress.
 
 
 
+## Week 4 (25/2/21)
+
+**Present our initial information visualization demo**
+
+**Ask which dataset we should choose: World or Europe**
+
+**TA's Response:**
+
+- Change the current layout to improve visualization
+- Europe dataset is enough
+- Good job for now
+
+**Tasks due nextweek**
+
+1. Change the current layout according to something like Airbnb's website
+   - Remove the title
+   - Remove the number and put slider on the top
+   - Put ranking result on the left
+   - Put map on the right
+   - Add a legend
+2. Find the missing data we need
+
