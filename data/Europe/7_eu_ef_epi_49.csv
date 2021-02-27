@@ -1,0 +1,50 @@
+country name,English Proficiency Index,
+Netherlands,652,
+Denmark,632,
+Finland,631,
+Sweden,625,
+Norway,624,
+Austria,623,
+Portugal,618,
+Germany,616,
+Belgium,612,
+Luxembourg,610,
+Croatia,599,
+Hungary,598,
+Serbia,597,
+Poland,596,
+Romania,589,
+Switzerland,588,
+Bulgaria,579,
+Greece,578,
+Slovakia,577,
+Lithuania,570,
+Estonia,566,
+France,559,
+Latvia,555,
+Italy,547,
+Spain,537,
+Belarus,513,
+Russia,512,
+Albania,511,
+Ukraine,506,
+Georgia,503,
+Armenia,494,
+Turkey,465,
+Azerbaijan,432,
+Czechia,580,
+Ireland,652,set to top since it is official language
+Cyprus,631,set to finland since its en speaker value is similar to finland on wiki 
+Malta,652,set to top since it is official language
+Slovenia,612,set to belgium since its en speaker value is similar on wiki 
+Iceland,430,set to below the lowest
+Liechtenstein,430,set to below the lowest
+United Kingdom,430,set to below the lowest
+Montenegro,430,set to below the lowest
+North Macedonia,430,set to below the lowest
+Andorra,430,set to below the lowest
+Bosnia and Herzegovina,430,set to below the lowest
+Kosovo,430,set to below the lowest
+Moldova,430,set to below the lowest
+Monaco,430,set to below the lowest
+San Marino,430,set to below the lowest
