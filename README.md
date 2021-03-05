@@ -67,3 +67,24 @@ Information Visualization team 06 project progress.
    - Add a legend
 2. Find the missing data we need
 
+
+
+## Week 5 (4/3/21)
+
+**Present our datasets, model and web interface**
+
+- The interaction between the front end and the back end is not completed.
+
+**TA's Response:**
+
+- Make the interface more recognizable
+- Pay more attention to fine details, aethetic features and usability
+
+**Tasks due nextweek**
+
+1. Remove the submit botton and add on-change handler for all the control
+2. Color code/Attributes
+3. Branding: Use piechart-like control system to help users identify and control each indicator.
+4. Hover: After selecting a country in the barchart, highlight the corresponding area on the map 
+5. Keep historical results and make comparison: use sesssion storage
+6. Add a legend to the map to explain it
