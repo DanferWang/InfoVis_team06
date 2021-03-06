@@ -10,4 +10,5 @@
 #### Week 5
 - LX.html
     + A simple and clean version for adding new features later
-    + Please add comments when committing changes
+    + Separate CSS and JS files
+- 
