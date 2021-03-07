@@ -7,7 +7,7 @@
 
 .slider {
     -webkit-appearance: none;
-
+    border-radius: 1em;
     width: 85px;
     height: 25px;
     background: #d3d3d3;
@@ -27,6 +27,7 @@
     appearance: none;
     width: 25px;
     height: 25px;
+    border-radius: 1em;
     background: #4CAF50;
     cursor: pointer;
 }

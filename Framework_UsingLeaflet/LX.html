@@ -18,7 +18,7 @@
 
     <!-- external JavaScript -->
     <script src="leaflet/leaflet.js" charset="utf-8"></script>
-
+    <script src="LX/slider.js" type="text/javascript" charset="utf-8"></script>
     <!-- European Map json -->
     <script src="leaflet/europe.geojson" type="text/javascript"></script>
     <script src="LX/europe31_withid.geojson" type="text/javascript"></script>
@@ -57,26 +57,33 @@
                  <div style="display: flex;margin-top: 10px;">
                      <div class="slidecontainer">
                          <p>GDP</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></br>
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sGDP" oninput="sGDPout.value = this.value">
+                         <output id = "sGDPout">50</output>
+
                          <p>Percentage of English Speaker</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></br>
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sEnSp" oninput="sEnspout.value = this.value">
+                         <output id = "sEnspout">50</output>
                          <p>Forest cover rate</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></br>
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sForest" oninput="sForestout.value = this.value">
+                         <output id = "sForestout">50</output>
                      </div>
                      <div class="slidecontainer" style="margin-left: 10px;">
                          <p>Population density</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></br>
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sPop" oninput="sPopout.value = this.value">
+                         <output id = "sPopout">50</output>
                          <p>Education</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></br>
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sEdu" oninput="sEduout.value = this.value">
+                         <output id = "sEduout">50</output>
                          <p>Air quality</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="myRange"></br>
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sAir" oninput="sAirout.value = this.value">
+                         <output id = "sAirout">50</output>
                      </div>
                      
                  </div>
               
             </div>
 
-            <!-- Submit Button -->>
+            <!-- Submit Button -->
             <div style="text-align: center;">
                 <button type="button" class="btn btn-success" style="width: 200px;">Submit</button>
             </div>
