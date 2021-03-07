@@ -6,8 +6,8 @@
 /********************************************************/
 
 var mapOptions = {
-    center: [54.54, 10],
-    zoom: 3.5
+    center: [54.54, 20],
+    zoom: 3.75
   }
 var mymap = L.map('mapid', mapOptions);
 
