@@ -1,8 +1,17 @@
+/*
 var dataArray = [70, 57, 45, 40, 30, 20];
 
 var canvas = d3.select("#barchart")
     .append("svg")
     .attr("width", 900).attr("height", 500);
+*/
+var dataArray = [70, 57, 45, 40, 30, 20,60,50,30,40,50,40];
+
+var canvas = d3.select("#barchart")
+    .append("svg")
+    .attr("width", 380).attr("height", 900);
+
+
 
 var bars = canvas.selectAll("rect")
     .data(dataArray)
