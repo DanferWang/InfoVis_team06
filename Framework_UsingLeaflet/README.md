@@ -13,4 +13,7 @@
     + Separate CSS and JS files.
     + Hover and highlight function of map.
     + Create a new geojson file based on /leaflet/europe.geojson and add Cyprus mannually, see europe31_withid.geojson.
-- 
+    + Has been integrated with eumap_rev_linxiao.html.
+- eumap_rev_linxiao.html
+    + A new box-shape interface.
+    + Add a piechart and reorganize the modules.
