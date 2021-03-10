@@ -17,12 +17,12 @@ var svg = d3.select("#donut-chart")
 // create initial data_set
 //var data1 = {a: 50, b: 50, c:50, d:50, e:50, f: 50}
         var data1 = [
-          {indic: "GDP", value: 50},
-          {indic: "English Speaker", value: 50},
+          {indic: "EPI", value: 50},
+          {indic: "COL", value: 50},
           {indic: "Forest cover", value: 50},
           {indic: "Population density", value: 50},   
-          {indic: "Education", value: 50},
-          {indic: "Air quality", value: 50},
+          // {indic: "Education", value: 50},
+          // {indic: "Air quality", value: 50},
         ];
 
 // set the color scale
@@ -33,12 +33,12 @@ var color = d3.scaleOrdinal()
 // A function that create / update the plot for a given variable:
 function updatepie() {
 
-    data1[0].value = document.getElementById("sGDP").value;
-    data1[1].value = document.getElementById("sEnSp").value;
-    data1[2].value = document.getElementById("sForest").value;
+    data1[0].value = document.getElementById("sEPI").value;
+    data1[1].value = document.getElementById("sCOL").value;
+    data1[2].value = document.getElementById("sInt").value;
     data1[3].value = document.getElementById("sPop").value;
-    data1[4].value = document.getElementById("sEdu").value;
-    data1[5].value = document.getElementById("sAir").value;
+    // data1[4].value = document.getElementById("sEdu").value;
+    // data1[5].value = document.getElementById("sAir").value;
   // Compute the position of each group on the pie:
   var pie = d3.pie()
     .value(function(d) {return d.value; })
