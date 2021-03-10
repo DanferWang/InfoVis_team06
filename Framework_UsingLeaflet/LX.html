@@ -24,11 +24,17 @@
     <script src="LX/europe31_withid.geojson" type="text/javascript"></script>
     
     <!-- D3 package -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
+        crossorigin=""></script> -->
+    
+    <!-- Color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 </head>
 
@@ -45,48 +51,52 @@
     <div class="content">
         <!-- 左侧区域 -->
         <div class="left-box">
-            <!-- 饼图 -->
-            <div class="donut-chart" id="donut-chart" style="border-bottom: 1px solid #A5a5a5;">
-                  <p>Result score</p>
-                  <script src="/LX/piechart.js" type="text/javascript" ></script>
-            </div>
+
             
             <!-- Sliders -->
             <div style="margin-top: 10px;">
-                 <p>Result score</p>
+                 <p>Indicator Weight Control</p>
                  <div style="display: flex;margin-top: 10px;">
                      <div class="slidecontainer">
                          <p>GDP</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sGDP" oninput="sGDPout.value = this.value">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sGDP" oninput="sGDPout.value = this.value" onchange="updatepie()">
                          <output id = "sGDPout">50</output>
 
                          <p>Percentage of English Speaker</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sEnSp" oninput="sEnspout.value = this.value">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sEnSp" oninput="sEnspout.value = this.value" onchange="updatepie()">
                          <output id = "sEnspout">50</output>
+
                          <p>Forest cover rate</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sForest" oninput="sForestout.value = this.value">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sForest" oninput="sForestout.value = this.value" onchange="updatepie()">
                          <output id = "sForestout">50</output>
                      </div>
                      <div class="slidecontainer" style="margin-left: 10px;">
                          <p>Population density</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sPop" oninput="sPopout.value = this.value">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sPop" oninput="sPopout.value = this.value" onchange="updatepie()">
                          <output id = "sPopout">50</output>
                          <p>Education</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sEdu" oninput="sEduout.value = this.value">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sEdu" oninput="sEduout.value = this.value" onchange="updatepie()">
                          <output id = "sEduout">50</output>
                          <p>Air quality</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sAir" oninput="sAirout.value = this.value">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sAir" oninput="sAirout.value = this.value" onchange="updatepie()">
                          <output id = "sAirout">50</output>
                      </div>
                      
                  </div>
               
             </div>
-
             <!-- Submit Button -->
             <div style="text-align: center;">
                 <button type="button" class="btn btn-success" style="width: 200px;">Submit</button>
             </div>
+            <!-- 饼图 -->
+            <div  id="donut-chart" style="border-top: 1px solid #A5a5a5; margin-top: 20px;"> 
+                <p style = "margin-top: 20px;">Indicator Weighted Condition</p>
+                <script src="/LX/piechart2.js" type="text/javascript" ></script>     
+            </div>
+            
+
+            
         </div>
 
         <!-- 地图区域 -->

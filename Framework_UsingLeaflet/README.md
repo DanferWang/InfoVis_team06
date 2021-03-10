@@ -15,6 +15,9 @@
     + Create a new geojson file based on /leaflet/europe.geojson and add Cyprus mannually, see europe31_withid.geojson.
     + Has been integrated with eumap_rev_linxiao.html.
     + slider could display the current value
+    + slider could control the display of piechart
+        * add this version in "piechart2.js" file
+        * notice that the pie chart should be placed below the slider
 - eumap_rev_linxiao.html
     + A new box-shape interface.
     + Add a piechart and reorganize the modules.
