@@ -1,5 +1,7 @@
 # Infomation Visualization
-Information Visualization team 06 project progress.
+- This repo showcases our implementation procedure of the project in the course - Information Visualization at University of Amsterdam on 2021.
+- The workflow of our implementation shows <a href="https://github.com/DanferWang/InfoVis_team06/blob/main/Framework_UsingLeaflet/README.md" target="_blank">here</a>.
+- The following parts record our idea, modification, and TA's feedback.
 
 ## Week 2 (11/2/21)
 
