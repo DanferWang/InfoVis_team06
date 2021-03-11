@@ -36,7 +36,7 @@
 - Recommend that we could go for the second one.
 - The second idea is more suitable to Visual Analytic project.
 
-**Tasks due nextweek**
+**Tasks due nextweek:**
 
 1. Prepare a prototype
 	- Providing pdf, showing where each component should be placed
@@ -59,7 +59,7 @@
 - Europe dataset is enough
 - Good job for now
 
-**Tasks due nextweek**
+**Tasks due nextweek:**
 
 1. Change the current layout according to something like Airbnb's website
    - Remove the title
@@ -82,7 +82,7 @@
 - Make the interface more recognizable
 - Pay more attention to fine details, aethetic features and usability
 
-**Tasks due nextweek**
+**Tasks due nextweek:**
 
 1. Remove the submit botton and add on-change handler for all the control
 2. Color code/Attributes
@@ -90,3 +90,23 @@
 4. Hover: After selecting a country in the barchart, highlight the corresponding area on the map 
 5. Keep historical results and make comparison: use sesssion storage
 6. Add a legend to the map to explain it
+
+## Week 6 (11/3/21)
+
+**Present our webpage, and with Flask backend**
+
+- The interaction between the front end and the back end has some bugs to fix.
+
+**TA's Response:**
+
+- some advice for fixing the bugs
+- better arrangement and interaction on pie chart and slider
+
+**Tasks due nextweek:**
+
+1. Wheel(Pie chart) on top
+2. Real time slider,change in real time 
+3. move the sliders to bottom
+4. slider wider, whole width 
+5. Result scores(bar chart), fix it on the back end (real time)
+6. legends and redrawing (map)
