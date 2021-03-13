@@ -36,3 +36,9 @@
     + Add the legend in the pie chart and the bar chart.
     + search history(optional?)
     + elaborate the color and details of all elements
+
+#### Week 6
+- new (folder)
+    + slider could control pie in real time by oninput
+    + rearrange the pie length and locations to meet the TA's suggestion
+    + change the slider's color which make users easily recognize the relation between pie chart
