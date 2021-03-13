@@ -34,12 +34,18 @@ var color = d3.scaleOrdinal()
 //   .range(["#1b9e77", "#d95f02" , "#7570b3", "#e7298a"]);
 
 // A function that create / update the plot for a given variable:
-function updatepie() {
 
-    data1[0].value = document.getElementById("sEPI").value;
-    data1[1].value = document.getElementById("sCOL").value;
-    data1[2].value = document.getElementById("sInt").value;
-    data1[3].value = document.getElementById("sPop").value;
+var count = 0;
+function updatepie() {
+    if (count == 0){
+      var data = data1;
+    }
+    else{
+    var data = data1;
+    data[0].value = document.getElementById("sEPI").value;
+    data[1].value = document.getElementById("sCOL").value;
+    data[2].value = document.getElementById("sInt").value;
+    data[3].value = document.getElementById("sPop").value;}
     //data1[4].value = document.getElementById("sForest").value;
     //data1[5].value = document.getElementById("sAir").value;
   // Compute the position of each group on the pie:
@@ -48,7 +54,7 @@ function updatepie() {
     .sort(function(a, b) { console.log(a) ; return d3.ascending(a.key, b.key);} ) // This make sure that group order remains the same in the pie chart
   
   //var data_ready = pie(d3.entries(data1))
-  var data_ready = pie(data1)
+  var data_ready = pie(data)
   // map to data
   var u = svg.selectAll("path")
     .data(data_ready)
@@ -59,9 +65,9 @@ function updatepie() {
     .append('path')
     .merge(u)
     .transition()
-    .duration(500)
+    .duration(10)
     .attr('d', d3.arc()
-      .innerRadius(20)
+      .innerRadius(70)
       .outerRadius(radius)
     )
     .attr('fill', function(d,i){ return(color(i)) })
@@ -75,7 +81,11 @@ function updatepie() {
     .exit()
     .remove()
 
+  count = 1;
+
 }
+
+
 
 // Initialize the plot with the first dataset
 updatepie()

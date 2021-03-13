@@ -51,39 +51,35 @@
     <div class="content">
         <!-- 左侧区域 -->
         <div class="left-box">
-
+            <p>Indicator Weighted Condition</p>
+            <!-- 饼图 -->
+            <div  id="donut-chart" style="margin-top: 10px; margin-left: 32px"> 
+                
+                <script src="../static/js/piechart2.js" type="text/javascript" ></script>     
+            </div>
             
             <!-- Sliders -->
-            <div style="margin-top: 10px;">
-                 <p>Indicator Weight Control</p>
+            <div style="margin-top: 10px; border-top: 1px solid #A5a5a5;">
+                 <p  style = "margin: 10px 0px 10px 0px;" >Indicator Weight Control</p>
                  <div style="display: flex;margin-top: 10px;">
                      <div class="slidecontainer">
                          <p>Environment Performance Index</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sEPI" name=gdp oninput="sEPIout.value = this.value" onchange="updatepie()">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sEPI" name=gdp oninput="sEPIout.value = this.value; updatepie()" >
                          <output id = "sEPIout">50</output>
 
                          <p>Cost of Living</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sCOL" name=eng oninput="sCOLout.value = this.value" onchange="updatepie()">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sCOL" name=eng oninput="sCOLout.value = this.value; updatepie()" >
                          <output id = "sCOLout">50</output>
 
-<!--                          <p>Forest cover rate</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sForest" name=forest oninput="sForestout.value = this.value" onchange="updatepie()">
-                         <output id = "sForestout">50</output> -->
-                     </div>
-                     <div class="slidecontainer" style="margin-left: 10px;">
                          <p>Degree of Internationalization</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sInt" name=pop oninput="sIntout.value = this.value" onchange="updatepie()">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sInt" name=pop oninput="sIntout.value = this.value; updatepie()">
                          <output id = "sIntout">50</output>
                          <p> Quality of Population</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sPop" name=edu oninput="sPopout.value = this.value" onchange="updatepie()">
+                         <input type="range" min="1" max="100" value="50" class="slider" id="sPop" name=edu oninput="sPopout.value = this.value; updatepie()" >
                          <output id = "sPopout">50</output>
-                         
-<!--                          <p>Air quality</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sAir" name=air oninput="sAirout.value = this.value" onchange="updatepie()">
-                         <output id = "sAirout">50</output> -->
 
                      </div>
-                     
+
                  </div>
               
             </div>
@@ -91,11 +87,7 @@
             <div style="text-align: center;">
                 <button type="button" class="btn btn-success" id="submitB" style="width: 200px;">Submit</button>
             </div>
-            <!-- 饼图 -->
-            <div  id="donut-chart" style="border-top: 1px solid #A5a5a5; margin-top: 20px;"> 
-                <p style = "margin-top: 20px;">Indicator Weighted Condition</p>
-                <script src="../static/js/piechart2.js" type="text/javascript" ></script>     
-            </div>
+
             
 
             

@@ -1,5 +1,5 @@
 
-#sEPI::-webkit-slider-thumb{
+/*#sEPI::-webkit-slider-thumb{
     background-color: #1b9e77;
 }
 #sCOL::-webkit-slider-thumb{
@@ -10,9 +10,15 @@
 }
 #sPop::-webkit-slider-thumb{
     background-color: #e7298a;
-}
+}*/
+
+#sEPI {background: #1b9e77;}
+#sCOL {background: #d95f02;}
+#sInt {background: #7570b3;}
+#sPop {background: #e7298a}
+
 .slidecontainer {
-    width: 70%;
+    width: 95%;
     /* Width of the outside container */
     text-align: center;
     margin: 0 auto;
@@ -21,8 +27,8 @@
 .slider {
     -webkit-appearance: none;
     border-radius: 1em;
-    width: 85px;
-    height: 25px;
+    width: 100%;
+    height: 15px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
@@ -41,7 +47,7 @@
     width: 25px;
     height: 25px;
     border-radius: 1em;
-    background: #4CAF50;
+    background: #d3d3d3;
     cursor: pointer;
 }
 
@@ -54,7 +60,7 @@
 
 .submit-button {
     display: block;
-    width: 70%;
+    width: 100%;
     padding: 0.75rem;
     opacity: 0.85;
     background: #4CAF50;
