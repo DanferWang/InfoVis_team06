@@ -153,6 +153,8 @@ legend.addTo(mymap);
 
 
 function updatePlotMap(array) {
+  // remove the former layers for color
+  mymap.removeLayer(geojson);
 
   // The color configuration.
   function newColor(d) {
@@ -166,7 +168,7 @@ function updatePlotMap(array) {
                   '#ffffcc';
   }
 
- 
+
   for (var i = 0; i < array.length; i++) {
     europe31.features[i].properties.scores = array[i];
   }
@@ -197,8 +199,6 @@ function updatePlotMap(array) {
 
     info.update(layer.feature.properties);
   }
-
-  var geojson;
 
   function resetHighlight(e) {
     geojson.resetStyle(e.target);
