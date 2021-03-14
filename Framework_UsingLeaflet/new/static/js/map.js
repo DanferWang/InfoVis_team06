@@ -153,20 +153,6 @@ legend.addTo(mymap);
 
 
 function updatePlotMap(array) {
-  // remove all layers and controls
-  mymap.eachLayer(function (layer) {
-    mymap.removeLayer(layer);
-  });
-
-  // plot a new map canvas
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/light-v9',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiZGFuZmVyd2FuZyIsImEiOiJja2xpN2NndWgyYTI1MndzNDV1bjBrY2d2In0.WdslBmCdgObpqBD0e60C3g'
-  }).addTo(mymap);
 
   // The color configuration.
   function newColor(d) {
