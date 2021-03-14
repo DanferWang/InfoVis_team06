@@ -113,7 +113,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type=text/javascript>
       $(function() {
-        $('#submitB').bind('click', function() {
+        $('.slider').on('input',function() {
           $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
             a: $('input[name="gdp"]').val(),
             b: $('input[name="eng"]').val(),
