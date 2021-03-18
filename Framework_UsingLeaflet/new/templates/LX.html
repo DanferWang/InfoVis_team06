@@ -22,99 +22,113 @@
     <!-- European Map json -->
     <script src="../static/europe.geojson" type="text/javascript"></script>
     <script src="../static/europe31_withid.geojson" type="text/javascript"></script>
-    
+
     <!-- D3 package -->
     <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
-
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
+    <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>  -->
+    <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script> -->
-    
+
     <!-- Color scale -->
+    <!---->
+    <script src="http://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 </head>
 
 
 <body>
-<!--外围边框 -->
-<div class="box">
-    <!-- 标题栏 -->
-    <div class="title">
-        Your Best Country to Retire
-    </div>
+    <!--外围边框 -->
+    <div class="box">
+        <!-- 标题栏 -->
+        <div class="title">
+            Your Best Country to Retire
+        </div>
 
-    <!-- 内容区 -->
-    <div class="content">
-        <!-- 左侧区域 -->
-        <div class="left-box">
-            <p>Indicator Weighted Condition</p>
-            <!-- 饼图 -->
-            <div  id="donut-chart" style="margin-top: 10px; margin-left: 32px"> 
-                
-                <script src="../static/js/piechart2.js" type="text/javascript" ></script>     
-            </div>
-            
-            <!-- Sliders -->
-            <div style="margin-top: 10px; border-top: 1px solid #A5a5a5;">
-                 <p  style = "margin: 10px 0px 10px 0px;" >Indicator Weight Control</p>
-                 <div style="display: flex;margin-top: 10px;">
-                     <div class="slidecontainer">
-                         <p>Environment Performance Index</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sEPI" name=gdp oninput="sEPIout.value = this.value; updatepie()" >
-                         <output id = "sEPIout">50</output>
+        <!-- 内容区 -->
+        <div class="content">
+            <!-- 左侧区域 -->
+            <div class="left-box">
+                <p>Indicator Weighted Condition</p>
+                <!-- 饼图 -->
+                <div id="donut-chart" style="margin-top: 10px; margin-left: 32px">
 
-                         <p>Cost of Living</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sCOL" name=eng oninput="sCOLout.value = this.value; updatepie()" >
-                         <output id = "sCOLout">50</output>
+                    <script src="../static/js/piechart2.js" type="text/javascript"></script>
+                </div>
 
-                         <p>Degree of Internationalization</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sInt" name=pop oninput="sIntout.value = this.value; updatepie()">
-                         <output id = "sIntout">50</output>
-                         <p> Quality of Population</p>
-                         <input type="range" min="1" max="100" value="50" class="slider" id="sPop" name=edu oninput="sPopout.value = this.value; updatepie()" >
-                         <output id = "sPopout">50</output>
+                <!-- Sliders -->
+                <div style="margin-top: 10px; border-top: 1px solid #A5a5a5;">
+                    <p style="margin: 10px 0px 10px 0px;">Indicator Weight Control</p>
+                    <div style="display: flex;margin-top: 10px;">
+                        <div class="slidecontainer">
+                            <p>Environment Performance Index</p>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="sEPI" name=gdp
+                                oninput="sEPIout.value = this.value; updatepie()">
+                            <output id="sEPIout">50</output>
 
-                     </div>
+                            <p>Cost of Living</p>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="sCOL" name=eng
+                                oninput="sCOLout.value = this.value; updatepie()">
+                            <output id="sCOLout">50</output>
 
-                 </div>
-              
-            </div>
-            <!-- Submit Button
+                            <p>Degree of Internationalization</p>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="sInt" name=pop
+                                oninput="sIntout.value = this.value; updatepie()">
+                            <output id="sIntout">50</output>
+                            <p> Quality of Population</p>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="sPop" name=edu
+                                oninput="sPopout.value = this.value; updatepie()">
+                            <output id="sPopout">50</output>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Submit Button
             <div style="text-align: center;">
                 <button type="button" class="btn btn-success" id="submitB" style="width: 200px;">Submit</button>
             </div> -->
 
-            
 
-            
-        </div>
+            </div>
 
-        <!-- 地图区域 -->
-        <div id="mapid">
-            <script src="../static/js/map.js" type="text/javascript" ></script>
-        </div>
+            <!-- 地图区域 -->
+            <div id="mapid">
+                <script src="../static/js/map.js" type="text/javascript"></script>
+            </div>
 
-        <!-- 右侧区域 -->
-        <div class="right-box">
-            <p style="padding: 10px 0px 0px 10px;">Result score</p>
-            <div  id="barchart" >
-                 <script src="../static/js/d3bar.js" type="text/javascript" ></script>
+            <!-- 右侧区域 -->
+            <div class="right-box">
+                <p style="padding: 10px 0px 0px 10px;">Result score</p>
+                <div id="barchart">
+                    <!-- <script src="../static/js/d3bar.js" type="text/javascript"></script> -->
+                </div>
             </div>
         </div>
-    </div>    
-</div>
-<script type=text/javascript>
+    </div>
+    <script type=text/javascript>
     $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
   </script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script type=text/javascript>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type=text/javascript>
       $(function() {
+        getJson() 
+
         $('.slider').on('input',function() {
-          $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+          getJson() 
+          return false;
+        });
+      });
+
+      function getJson() {
+        $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
             a: $('input[name="gdp"]').val(),
             b: $('input[name="eng"]').val(),
             c: $('input[name="pop"]').val(),
@@ -122,13 +136,73 @@
 
           }, function(data) {
             resultArray = data.result;
+            showBarchart(resultArray); 
             updatePlotMap(resultArray);
-            updatePlotBar(resultArray);
+            // updatePlotBar(resultArray);
             console.log(data.result);
           });
-          return false;
+      }
+ 
+      /**
+       * 实现柱状图的渲染
+       * */
+      function showBarchart(data) {
+          // 柱状图
+        var chart = Highcharts.chart('barchart', {
+            chart: {
+                type: 'bar',
+                backgroundColor: '#e9e9e9',
+                height: 1500
+            },
+            title: {
+                text: ''
+            },
+              //设置滚动条    
+            scrollbar: {
+                enabled: true
+            },
+            credits: { enabled: false},
+            xAxis: {
+                categories: ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus','Czrch', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany',
+                'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland',
+                'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switerland', 'UK'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 30,
+                title: {
+
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true,
+                        allowOverlap: true // 允许数据标签重叠
+                    }
+                }
+            },
+            series: [{
+                name: '',
+                data:data
+            }]
         });
-      });
+
+        $("#barchart").css({
+            height:'800px',
+            overflow:'auto'
+        })
+      }
+
+        
     </script>
 
 </body>

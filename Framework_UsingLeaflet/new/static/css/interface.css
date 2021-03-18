@@ -1,5 +1,7 @@
 #barchart {
     position: relative;
+    height: 800px;
+    overflow: auto !important;
     /*
     left: 30%;
     -webkit-transform: translateX(-50%);

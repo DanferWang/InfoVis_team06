@@ -40,3 +40,7 @@ def weighted(w1,w2,w3,w4):
     res = Sorted.sort_values(by='Country')
     res = res.Scores.to_list()
     return res
+
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5000,debug=True)
