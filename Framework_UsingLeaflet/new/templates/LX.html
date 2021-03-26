@@ -108,7 +108,7 @@
             <div class="right-box">
                 <p style="padding: 10px 0px 0px 10px;">Result score</p>
                 <div id="barchart">
-                    <!-- <script src="../static/js/d3bar.js" type="text/javascript"></script> -->
+                    <script src="../static/js/d3bar.js" type="text/javascript"></script>
                 </div>
             </div>
         </div>
@@ -136,9 +136,9 @@
 
           }, function(data) {
             resultArray = data.result;
-            showBarchart(resultArray); 
+            //showBarchart(resultArray); 
             updatePlotMap(resultArray);
-            // updatePlotBar(resultArray);
+            updatePlotBar(resultArray);
             console.log(data.result);
           });
       }
@@ -146,61 +146,61 @@
       /**
        * 实现柱状图的渲染
        * */
-      function showBarchart(data) {
-          // 柱状图
-        var chart = Highcharts.chart('barchart', {
-            chart: {
-                type: 'bar',
-                backgroundColor: '#e9e9e9',
-                height: 1500
-            },
-            title: {
-                text: ''
-            },
-              //设置滚动条    
-            scrollbar: {
-                enabled: true
-            },
-            credits: { enabled: false},
-            xAxis: {
-                categories: ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus','Czrch', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany',
-                'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland',
-                'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switerland', 'UK'],
-                title: {
-                    text: null
-                }
-            },
-            yAxis: {
-                min: 30,
-                title: {
+      // function showBarchart(data) {
+      //     // 柱状图
+      //   var chart = Highcharts.chart('barchart', {
+      //       chart: {
+      //           type: 'bar',
+      //           backgroundColor: '#e9e9e9',
+      //           height: 1500
+      //       },
+      //       title: {
+      //           text: ''
+      //       },
+      //         //设置滚动条    
+      //       scrollbar: {
+      //           enabled: true
+      //       },
+      //       credits: { enabled: false},
+      //       xAxis: {
+      //           categories: ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus','Czrch', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany',
+      //           'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland',
+      //           'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switerland', 'UK'],
+      //           title: {
+      //               text: null
+      //           }
+      //       },
+      //       yAxis: {
+      //           min: 30,
+      //           title: {
 
-                },
-                labels: {
-                    overflow: 'justify'
-                }
-            },
-            tooltip: {
+      //           },
+      //           labels: {
+      //               overflow: 'justify'
+      //           }
+      //       },
+      //       tooltip: {
 
-            },
-            plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true,
-                        allowOverlap: true // 允许数据标签重叠
-                    }
-                }
-            },
-            series: [{
-                name: '',
-                data:data
-            }]
-        });
+      //       },
+      //       plotOptions: {
+      //           bar: {
+      //               dataLabels: {
+      //                   enabled: true,
+      //                   allowOverlap: true // 允许数据标签重叠
+      //               }
+      //           }
+      //       },
+      //       series: [{
+      //           name: '',
+      //           data:data
+      //       }]
+      //   });
 
-        $("#barchart").css({
-            height:'800px',
-            overflow:'auto'
-        })
-      }
+      //   $("#barchart").css({
+      //       height:'800px',
+      //       overflow:'auto'
+      //   })
+      // }
 
         
     </script>

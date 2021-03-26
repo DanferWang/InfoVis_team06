@@ -1,135 +1,188 @@
-/*
-var dataArray = [70, 57, 45, 40, 30, 20];
 
+var dataArray = [66.9, 59.7, 60, 60.6, 62.3, 63.3, 64.3, 61.5, 63.8, 60.3, 66.9, 60.3, 62.2, 61.2, 66.6, 57.4, 59.1, 59.9, 71.7, 62.9, 66.3, 62.2, 61.2, 62.5, 60.7, 59.5, 67.1, 60.9, 66.1, 59.3, 68.2];
+
+
+
+var margin = {top: 30, right: 30, bottom: 70, left: 65},
+    width = 540 - margin.left - margin.right,
+    height = 840 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
 var canvas = d3.select("#barchart")
-    .append("svg")
-    .attr("width", 900).attr("height", 500);
-*/
-// var width = 380;
-// var height = 900;
-// var padding = { left: 30, right: 30, top: 20, bottom: 20 };
-// //矩形所占的宽度（包括空白）
-// var rectStep = 35;
-// //矩形所占的宽度（不包括空白）
-// var rectWidth = 30;
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
 
-// var yScale = d3.scale.linear()
-//     .domain([0, d3.max(dataArray)])
-//     .range([height - padding.top - padding.bottom, 0]);
-// var yAxis = d3.svg.axis()
-//     .scale(yScale)
-//     .orient("left");
+// genggai
+var xdata = ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus','Czech', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany',
+'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland',
+'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switerland', 'UK'];
+c=dataArray.map((e,i)=>{return [e,xdata[i]]})
 
-// var dataArray = [10, 57, 45, 40, 30, 20, 60, 50, 30, 40, 50, 40];
+c.sort((x,y)=>{
+    if(x[0]<y[0]){return 1;}else{return -1}
+     })
+b_new=c.map(e=>e[0])
+a_new=c.map(e=>e[1])
+a_new=a_new.reverse()
+console.log(a_new)
+var xScale3 = d3.scaleBand()
+.domain(a_new)
+.range([ height, 0]);
 
-// var canvas = d3.select("#barchart")
-//     .append("svg")
-//     .attr("width", 380 - 50).attr("height", 900);
+var xAxis3 = d3.axisLeft().scale(xScale3);
+canvas.append('g')
+.attr('trasform','translate(150,0)')
+.call(xAxis3)
+.selectAll("text")
+.attr("dy", ".75em")
+.attr('transform', 'rotate(25)');
 
+var xScale1 = d3.scaleLinear()
 
+.domain([0, 100])
 
-// var bars = canvas.selectAll("rect")
-//     .data(dataArray)
-//     .enter()
-//     .append("rect")
-//     .attr('class', 'base')
-//     .attr("width", function (d) {
-//         return d * 5;
-//     })
-//     .attr("height", 25)
-//     .attr("y", function (d, i) {
-//         return i * 40;
-//     })
-//     .attr("fill", "#4CAF50");
+.range([0, width - 155]);
 
-//     bars.append("text")
-//     .text(function(d){return d;})
-//     .attr({
-//         "x":function(d){return scale(d)},
-//         "y":25/2,
-//         "text-anchor":"end"
-//     })
+var xAxis1 = d3.axisTop().scale(xScale1);
+
+canvas.append('g')
+.attr('trasform','translate(0,10)')
+.call(xAxis1);
 
 
 
-var data = [10, 57, 45, 40, 30, 20, 60, 50, 30, 40, 50, 40],
-    bar_height = 50,
-    bar_padding = 10,
-    height = (bar_height + bar_padding) * data.length,
-    width = 380;
+// jieshu
+var bars = canvas.selectAll("rect")
+    .data(b_new)
+    .enter()
+    .append("rect")
+    .attr('class', 'base')
+    .attr("width", function (d) {
+        return d * 3;
+    })
+    .attr("height", 18)
+    .attr("y", function (d, i) {
+        return i * 24;
+    })
+    .attr("fill", function(d){return d > 80 ? '#0c2c84' :
+      d > 75 ? '#225ea8' :
+        d > 70 ? '#1d91c0' :
+          d > 65 ? '#41b6c4' :
+            d > 60 ? '#7fcdbb' :
+              d > 55 ? '#c7e9b4' :
+                d > 50 ? '#edf8b1' :
+                  '#ffffcc';})
+    
+    .on('mouseover', function (d, i) {
+    d3.select(this).transition()
+       .duration('50')
+       .attr('opacity', '.85');
+    //Makes the new div appear on hover:
+    div.transition()
+       .duration(50)
+       .style("opacity", 1);
+     })
+    
+    .on('mouseout', function (d, i) {
+      d3.select(this).transition()
+           .duration('50')
+           .attr('opacity', '1');});
 
-var area = ['张三','李四','王五']
-var scale = d3.scaleLinear()
-    .domain([0, d3.max(data)])
-    .range([0, width]);
 
-var svg = d3.select("#barchart")
-    .append("svg").attr("width", 380).attr("height", 900)
-
-var bar = svg.selectAll("g").data(data).enter().append("g").attr("transform", function (d, i) {
-    return "translate(0," + i * (bar_height + bar_padding) + ")";
-})
-
-bar.append("rect").attr("width", function (d) { return  d * 5; })
-    .attr("height", 25
-    ).style("fill", "steelblue")
-
-bar.append("text").text(function (d,index) { 
-    console.log("----------",d,index)
-    if(index<area.length)
-        return area[index]+ d
-     return "张三" + d; }).attr("x", function (d) { return 10 }).attr("y", 16)
-
-
-
-/*
-canvas.append("text")
-    .text(function(d){
-        return d;
-    }).attr;
-*/
-
-//.attr("fill-width", "black");
 function updatePlotBar(array) {
-    // var dataArray = [70, 57, 45, 40, 30, 20,60,50,30,40,50,40];
-    console.log("---------", array);
-    var xp = d3.scale.ordinal()
-        .domain(data.map(function (d) {
-            return d.items;
-        }))
-        .rangeRoundBands([0, width - padding.left - padding.right], 0.1);
-
-    var yp = d3.scale.linear()
-        .domain([0, d3.max(datavalue)])
-        .range([height - padding.top - padding.bottom, 0]) //反过来？为什么呢（之前似乎讲过哦0w0）
-
-    var xAxis = d3.svg.axis()
-        .scale(xp)
-        .orient("bottom");
-
-    var yAxis = d3.svg.axis()
-        .scale(yp)
-        .orient("left");
 
     var remove = d3.select("#barchart").select("svg").remove();
-    var canvas = d3.select("#barchart")
-        .append("svg")
-        .attr("width", 380).attr("height", 1800);
+    var margin = {top: 30, right: 30, bottom: 70, left: 65},
+    width = 540 - margin.left - margin.right,
+    height = 840 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var canvas = d3.select("#barchart")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// genggai
+var xdata = ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus','Czech', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany',
+'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland',
+'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switerland', 'UK'];
+c=array.map((e,i)=>{return [e,xdata[i]]})
+
+c.sort((x,y)=>{
+    if(x[0]<y[0]){return 1;}else{return -1}
+     })
+b_new=c.map(e=>e[0])
+a_new=c.map(e=>e[1])
+a_new=a_new.reverse()
+console.log(a_new)
+var xScale3 = d3.scaleBand()
+.domain(a_new)
+.range([ height, 0]);
+
+var xAxis3 = d3.axisLeft().scale(xScale3);
+canvas.append('g')
+.attr('trasform','translate(150,0)')
+.call(xAxis3)
+.selectAll("text")
+.attr("dy", ".75em")
+.attr('transform', 'rotate(25)');
+
+var xScale1 = d3.scaleLinear()
+
+.domain([0, 100])
+
+.range([0, width - 155]);
+
+var xAxis1 = d3.axisTop().scale(xScale1);
+
+canvas.append('g')
+.attr('trasform','translate(0,10)')
+.call(xAxis1);
 
 
 
-    var bars = canvas.selectAll("rect")
-        .data(array)
-        .enter()
-        .append("rect")
-        .attr('class', 'base')
-        .attr("width", function (d) {
-            return d * 5;
-        })
-        .attr("height", 25)
-        .attr("y", function (d, i) {
-            return i * 40;
-        })
-        .attr("fill", "#4CAF50");
 
+// jieshu
+var bars = canvas.selectAll("rect")
+    .data(b_new)
+    .enter()
+    .append("rect")
+    .attr('class', 'base')
+    .attr("width", function (d) {
+        return d * 3;
+    })
+    .attr("height", 18)
+    .attr("y", function (d, i) {
+        return i * 24;
+    })
+    .attr("fill", function(d){return d > 80 ? '#0c2c84' :
+      d > 75 ? '#225ea8' :
+        d > 70 ? '#1d91c0' :
+          d > 65 ? '#41b6c4' :
+            d > 60 ? '#7fcdbb' :
+              d > 55 ? '#c7e9b4' :
+                d > 50 ? '#edf8b1' :
+                  '#ffffcc';})
+
+    .on('mouseover', function (d, i) {
+    d3.select(this).transition()
+       .duration('50')
+       .attr('opacity', '.85');
+    //Makes the new div appear on hover:
+    div.transition()
+       .duration(50)
+       .style("opacity", 1);
+     })
+    
+    .on('mouseout', function (d, i) {
+      d3.select(this).transition()
+           .duration('50')
+           .attr('opacity', '1');});
 }
