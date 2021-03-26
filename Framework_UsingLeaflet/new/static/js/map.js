@@ -7,14 +7,16 @@
 
 var mapOptions = {
   center: [54.54, 20],
-  zoom: 3.75
+  zoom: 3.50
 }
 var mymap = L.map('mapid', mapOptions);
+mymap.setMaxBounds([[-8, -80], [83, 80]]);
 
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-  maxZoom: 18,
+  maxZoom: 8,
+  minZoom:3,
   id: 'mapbox/light-v9',
   tileSize: 512,
   zoomOffset: -1,
