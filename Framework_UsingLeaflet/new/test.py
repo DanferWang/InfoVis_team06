@@ -12,7 +12,8 @@ def add_numbers():
     w2 = request.args.get('b', 0, type=int)
     w3 = request.args.get('c', 0, type=int)
     w4 = request.args.get('d', 0, type=int)
-    res = weighted(w1,w2,w3,w4)
+    w5 = request.args.get('e', 0, type=int)
+    res = weighted(w1,w2,w3,w4,w5)
     return jsonify(result=res)
 
 
@@ -23,15 +24,16 @@ def index():
 
 
 
-def weighted(w1,w2,w3,w4):
+def weighted(w1,w2,w3,w4,w5):
     #Normalized
-    tw = w1+w2+w3+w4
+    tw = w1+w2+w3+w4+w5
     W1 = w1/tw
     W2 = w2/tw
     W3 = w3/tw
     W4 = w4/tw
+    W5 = w5/tw
     
-    Scores = data.EPI*W1+data.COL*W2+data.International*W3+data.Quality*W4
+    Scores = data.EPI*W1 + data.COL*W2 + data.International*W3 + data.Quality*W4 + data.EHCI*W5
     Scores = Scores.round(1)
     Subset = list(zip(data.Country,Scores))
     df = pd.DataFrame(data = Subset, columns=['Country', 'Scores'])

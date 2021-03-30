@@ -94,6 +94,7 @@ var bars = canvas.selectAll("rect")
     .on("mouseout", function(d) {
     });
 // ===========================================================================
+
 // ===========================================================================
 function updatePlotBar(array) {
 
@@ -115,7 +116,7 @@ var canvas = d3.select("#barchart")
 // genggai
 var xdata = ['Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus','Czech', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany',
 'Greece', 'Hungary', 'Iceland', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Norway', 'Poland',
-'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switerland', 'UK'];
+'Portugal', 'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'UK'];
 combin=array.map((e,i)=>{return [e,xdata[i]]})
 
 combin.sort((x,y)=>{
@@ -129,6 +130,7 @@ a_new=combin.map(e=>e[1])
 tmp_a=combin.map(e=>e[1])
 // tmp_a use to show tooltip
 a_new.reverse()
+
 
 
 // ==== arrange data in new ds ====
@@ -147,8 +149,22 @@ for (var i = 0; i < tmp_a.length; i++) {
 data_t[i].c = tmp_a[i];
 data_t[i].value = b_new[i];
 }
-// ================================
 
+// ================================
+// function for interactive with map
+
+function newstyle_inbar(feature) {
+return {
+  fillColor: newColor(feature.properties.scores),
+  weight: 2,
+  color: 'white',
+  fillOpacity: 0.75
+};
+}
+function resetHighlight_inbar(layer) {
+  geojson.resetStyle(layer);
+  info.update();
+}
 
 // =======draw the coordinate======
 // y 
@@ -205,7 +221,24 @@ var bars = canvas.selectAll("rect")
         div.style("opacity", 1)
         div.html("Rank: "+num+"<br>"+"Country: "+(d.c)+"<br>"+"Score: "+(d.value));
         d3.select(this).attr("fill", "DarkOrange");
-        d3.select(this).attr("fill", "DarkOrange");
+
+        geojson.eachLayer(function (layer) {  
+          if(layer.feature.id == d.c) {    
+                layer.setStyle({
+                weight: 5,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7
+                });
+
+          if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+            layer.bringToFront(); }
+          
+          info.update(layer.feature.properties);
+          }
+        
+        });
+
     })
 
     .on("mousemove", function(d, i) {
@@ -228,6 +261,15 @@ var bars = canvas.selectAll("rect")
                       d.value > 55 ? '#c7e9b4' :
                         d.value > 50 ? '#edf8b1' :
                           '#ffffcc';});
+        geojson.eachLayer(function (layer) {  
+          if(layer.feature.id != "nothing") {    
+                geojson.resetStyle(layer);
+                info.update();
+          }
+        
+        });
+
+
     });
 
 }

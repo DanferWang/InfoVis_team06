@@ -72,7 +72,7 @@ info.onAdd = function (mymap) {
 };
 
 info.update = function (properties) {
-  this._div.innerHTML = '<h4>Scores</h4>' + (properties ?
+  this._div.innerHTML = '<h4>Score</h4>' + (properties ?
     '<b>' + properties.name + '</b><br />' + properties.scores
     : 'Hover over a country');
 };
