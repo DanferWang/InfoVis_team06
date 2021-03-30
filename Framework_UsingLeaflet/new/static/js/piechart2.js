@@ -20,7 +20,8 @@ var svg = d3.select("#donut-chart")
           {indic: "EPI", value: 50},
           {indic: "COL", value: 50},
           {indic: "Inter", value: 50},
-          {indic: "Popu", value: 50},   
+          {indic: "Popu", value: 50},
+          {indic: "Saf", value: 50},     
           //{indic: "Education", value: 50},
           //{indic: "Air quality", value: 50},
         ];
@@ -45,7 +46,8 @@ function updatepie() {
     data[0].value = document.getElementById("sEPI").value;
     data[1].value = document.getElementById("sCOL").value;
     data[2].value = document.getElementById("sInt").value;
-    data[3].value = document.getElementById("sPop").value;}
+    data[3].value = document.getElementById("sPop").value;
+    data[4].value = document.getElementById("sSaf").value;}
     //data1[4].value = document.getElementById("sForest").value;
     //data1[5].value = document.getElementById("sAir").value;
   // Compute the position of each group on the pie:
