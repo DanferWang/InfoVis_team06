@@ -110,3 +110,5 @@
 4. slider wider, whole width 
 5. Result scores(bar chart), fix it on the back end (real time)
 6. legends and redrawing (map)
+
+## Week 7 
